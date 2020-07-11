@@ -1,0 +1,893 @@
+@import 'mixins';
+@import 'variables';
+
+body {
+    margin: 0;
+    h1, p {
+        margin: 0
+    }
+}
+
+.top-nav {
+    @include d-flex(space-between, center);
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px 0;
+    .first {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .second {
+        position: relative;
+        width: auto;
+        display: flex;
+        input[type=text]:focus {
+            outline: none;
+            border: 1px solid #78C482;
+            color: #727272;
+        }
+        .one {
+            width: 237px;
+            height: 48px;
+            box-sizing: border-box;
+            padding: 15px;
+            padding-left: 40px;
+            border: 1px solid $lightGrey;
+            border-radius: 4px 0px 0px 4px;
+            &::placeholder {
+                color: #aeb9c1;
+            }
+        }
+        .two {
+            width: 499px;
+            height: 48px;
+            box-sizing: border-box;
+            padding: 15px;
+            border-radius: 0px 4px 4px 0px;
+            border: 1px solid $lightGrey;
+            &::placeholder {
+                color: #aeb9c1;
+            }
+        }
+        .img1 {
+            position: absolute;
+            top: 13px;
+            left: 15px;
+            width: 18px;
+            height: 20px;
+            img {
+                width: 100%;
+                height: 100%;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .img2 {
+            position: absolute;
+            top: 15px;
+            left: 205px;
+            width: 20px;
+            height: 20px;
+            img {
+                width: 100%;
+                height: 100%;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        .img3 {
+            position: absolute;
+            top: 14px;
+            right: 15px;
+            width: 18px;
+            height: 20px;
+            img {
+                width: 100%;
+                height: 100%;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .third {
+        @include d-flex(space-between, center);
+        width: 210px;
+        a {
+            @include fontStyle(Poppins, 13px, 300, #455065);
+            text-decoration: none;
+            &:hover {
+                color: #78C482;
+                cursor: pointer;
+                transition: .5s;
+            }
+        }
+        .account {
+            position: relative;
+            @include d-flex(space-between, center);
+            border-right: 1px solid #ebebf2;
+            padding-right: 48px;
+            @include linkHovered;
+            &:hover .signup {
+                display: block;
+                position: absolute;
+                top: 20px;
+                left: 0;
+                padding: 5px 15px;
+                background: $white;
+                border-radius: 4px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            }
+            a {
+                margin-right: 6px;
+            }
+            div {
+                width: 13px;
+                height: 11px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .signup {
+                display: none;
+            }
+        }
+    }
+    .fourth {
+        @include d-flex(space-between, center);
+        width: 105px;
+        a {
+            @include fontStyle(Poppins, 13px, 300, #455065);
+            text-decoration: none;
+            @include linkHovered;
+        }
+    }
+}
+
+.bottom-nav-wrapper {
+    border-top: 1px solid #ebebf2;
+    border-bottom: 1px solid #ebebf2;
+    margin-bottom: 15px;
+    width: 100%;
+    .bottom-nav {
+        @include d-flex(null, center);
+        width: 90%;
+        margin: 0 auto;
+        border-top: 10px;
+        .first {
+            @include d-flex(space-between, center);
+            div {
+                margin-right: 7px;
+                width: 17px;
+                height: 14px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    &:hover {
+                        opacity: .7;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        a {
+            text-decoration: none;
+            padding: 10px;
+            @include fontStyle(Poppins, 13px, 300, #455065);
+            @include linkHovered;
+        }
+        .second {
+            @include d-flex(space-between, center);
+            margin-right: 15px;
+            &:hover {
+                fill: #78C482;
+                cursor: pointer;
+            }
+            div {
+                width: 13px;
+                height: 11px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.carousel {
+    &.first {
+        width: 100%;
+        display: block;
+        .flickity-button {
+            display: none;
+        }
+        .flickity-page-dots {
+            display: none;
+        }
+        div {
+            width: 100%;
+            height: 435px;
+            margin-right: 20px;
+            img {
+                width: 100%;
+                height: 100%;
+                margin: 20px 40px;
+            }
+        }
+    }
+}
+
+.below-carousel {
+    width: 100%;
+    background: #fbfbfb;
+    .wrapper {
+        width: 70%;
+        margin: 0 auto;
+        height: 73px;
+        margin-top: 40px;
+        @include d-flex(space-between, center);
+        .icons {
+            @include d-flex(null, center);
+            div {
+                margin-right: 12px;
+            }
+            p {
+                @include fontStyle(Poppins, 13px, 300, #455065);
+            }
+        }
+    }
+}
+
+.explore {
+    p {
+        @include fontStyle(PlayFairDisplay, 35px, 600, $darkGrey);
+        margin-top: 90px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    div {
+        @include d-flex(center, center);
+        a {
+            @include fontStyle(Poppins, 13px, 300, #455065);
+            padding: 15px;
+            text-decoration: none;
+            border-top: 1px solid #ccd9e2;
+
+        }
+    }
+}
+
+
+
+.carousel {
+    &.covid {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        height: 500px;
+        margin-top: 80px;
+        .flickity-button {
+            background: #d9fcde;
+            top: 132px;
+        }
+        .flickity-page-dots {
+            display: none !important;
+        }
+        .flickity-button-icon {
+            fill: #90f0b5 !important;
+        }
+        .wrapper {
+            margin: 0 auto;
+            text-align: center;
+            width: 300px;
+            height: auto;
+            .price {
+                @include d-flex(space-between, center);
+                margin: 0 auto;
+                width: 110px;
+                margin-bottom: 10px;
+                p {
+                    margin: 0;
+                    @include fontStyle(Poppins, 13px, 200, #aeb9c1);
+                }
+                h1 {
+                    @include fontStyle(Poppins, 15px, 600, #455065);
+                    letter-spacing: .4px;
+                }
+            }
+            button {
+                padding: 10px 20px;
+                background: transparent;
+                outline: none;
+                border-radius: 4px;
+                border: 1px solid #aeb9c1;
+                @include fontStyle(Poppins, 13px, 300, #455065);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            p {
+                @include fontStyle(Poppins, 13px, 600, #455065);
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .img1, .img3 {
+                margin: 0 auto;
+                width: 244px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img2 {
+                margin: 0 auto;
+                width: 186px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img4 {
+                margin: 0 auto;
+                width: 115px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img5 {
+                margin: 0 auto;
+                width: 150px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img6 {
+                margin: 0 auto;
+                width: 236px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+        }
+    }
+}
+
+
+
+.carousel {
+    &.baby {
+        width: 100%;
+        height: 500px;
+        margin-top: 80px; 
+        .flickity-button {
+            background: #d9fcde;
+            top: 132px;
+        }
+        .flickity-page-dots {
+            display: none !important;
+        }
+        .flickity-button-icon {
+            fill: #90f0b5 !important;
+        }
+        .wrapper {
+            margin: 0 auto;
+            text-align: center;
+            width: 300px;
+            height: auto;
+            .price {
+                @include d-flex(space-between, center);
+                margin: 0 auto;
+                width: 110px;
+                margin-bottom: 10px;
+                p {
+                    margin: 0;
+                    @include fontStyle(Poppins, 13px, 200, #aeb9c1);
+                }
+                h1 {
+                    @include fontStyle(Poppins, 15px, 600, #455065);
+                    letter-spacing: .4px;
+                }
+            }
+            button {
+                padding: 10px 20px;
+                background: transparent;
+                outline: none;
+                border-radius: 4px;
+                border: 1px solid #aeb9c1;
+                @include fontStyle(Poppins, 13px, 300, #455065);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            p {
+                @include fontStyle(Poppins, 13px, 600, #455065);
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .img2, .img3 {
+                margin: 0 auto;
+                width: 244px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img1 {
+                margin: 0 auto;
+                width: 186px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img4 {
+                margin: 0 auto;
+                width: 115px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img5 {
+                margin: 0 auto;
+                width: 150px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img6 {
+                margin: 0 auto;
+                width: 236px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+        }
+    }
+}
+
+.carousel {
+    &.personal {
+        width: 100%;
+        height: 500px;
+        margin-top: 80px;
+        .flickity-button {
+            background: #d9fcde;
+            top: 132px;
+        }
+        .flickity-page-dots {
+            display: none !important;
+        }
+        .flickity-button-icon {
+            fill: #90f0b5 !important;
+        }
+        .wrapper {
+            margin: 0 auto;
+            text-align: center;
+            width: 300px;
+            height: auto;
+            .price {
+                @include d-flex(space-between, center);
+                margin: 0 auto;
+                width: 110px;
+                margin-bottom: 10px;
+                p {
+                    margin: 0;
+                    @include fontStyle(Poppins, 13px, 200, #aeb9c1);
+                }
+                h1 {
+                    @include fontStyle(Poppins, 15px, 600, #455065);
+                    letter-spacing: .4px;
+                }
+            }
+            button {
+                padding: 10px 20px;
+                background: transparent;
+                outline: none;
+                border-radius: 4px;
+                border: 1px solid #aeb9c1;
+                @include fontStyle(Poppins, 13px, 300, #455065);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            p {
+                @include fontStyle(Poppins, 13px, 600, #455065);
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .img2, .img3 {
+                margin: 0 auto;
+                width: 244px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img1 {
+                margin: 0 auto;
+                width: 186px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img4 {
+                margin: 0 auto;
+                width: 115px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img5 {
+                margin: 0 auto;
+                width: 150px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img6 {
+                margin: 0 auto;
+                width: 236px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+        }
+    }
+}
+
+.carousel {
+    &.health {
+        width: 100%;
+        height: 500px;
+        margin-top: 80px;
+        
+        .flickity-button {
+            background: #d9fcde;
+            top: 132px;
+        }
+        .flickity-page-dots {
+            display: none !important;
+        }
+        .flickity-button-icon {
+            fill: #90f0b5 !important;
+        }
+        .wrapper {
+            margin: 0 auto;
+            text-align: center;
+            width: 300px;
+            height: auto;
+            .price {
+                @include d-flex(space-between, center);
+                margin: 0 auto;
+                width: 110px;
+                margin-bottom: 10px;
+                p {
+                    margin: 0;
+                    @include fontStyle(Poppins, 13px, 200, #aeb9c1);
+                }
+                h1 {
+                    @include fontStyle(Poppins, 15px, 600, #455065);
+                    letter-spacing: .4px;
+                }
+            }
+            button {
+                padding: 10px 20px;
+                background: transparent;
+                outline: none;
+                border-radius: 4px;
+                border: 1px solid #aeb9c1;
+                @include fontStyle(Poppins, 13px, 300, #455065);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            p {
+                @include fontStyle(Poppins, 13px, 600, #455065);
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .img2, .img3 {
+                margin: 0 auto;
+                width: 244px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img1 {
+                margin: 0 auto;
+                width: 186px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img4 {
+                margin: 0 auto;
+                width: 115px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img5 {
+                margin: 0 auto;
+                width: 150px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img6 {
+                margin: 0 auto;
+                width: 236px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+        }
+    }
+}
+
+.carousel {
+    &.diabetic {
+        width: 100%;
+        height: 500px;
+        margin-top: 80px;
+        
+        .flickity-button {
+            background: #d9fcde;
+            top: 132px;
+        }
+        .flickity-page-dots {
+            display: none !important;
+        }
+        .flickity-button-icon {
+            fill: #90f0b5 !important;
+        }
+        .wrapper {
+            margin: 0 auto;
+            text-align: center;
+            width: 300px;
+            height: auto;
+            .price {
+                @include d-flex(space-between, center);
+                margin: 0 auto;
+                width: 110px;
+                margin-bottom: 10px;
+                p {
+                    margin: 0;
+                    @include fontStyle(Poppins, 13px, 200, #aeb9c1);
+                }
+                h1 {
+                    @include fontStyle(Poppins, 15px, 600, #455065);
+                    letter-spacing: .4px;
+                }
+            }
+            button {
+                padding: 10px 20px;
+                background: transparent;
+                outline: none;
+                border-radius: 4px;
+                border: 1px solid #aeb9c1;
+                @include fontStyle(Poppins, 13px, 300, #455065);
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            p {
+                @include fontStyle(Poppins, 13px, 600, #455065);
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+            .img2, .img3 {
+                margin: 0 auto;
+                width: 244px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img1 {
+                margin: 0 auto;
+                width: 186px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img4 {
+                margin: 0 auto;
+                width: 115px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            } 
+            .img5 {
+                margin: 0 auto;
+                width: 150px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+            .img6 {
+                margin: 0 auto;
+                width: 236px;
+                height: 212px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }  
+        }
+    }
+}
+
+.above-footer {
+    height: 330px;
+    background-image: linear-gradient(to right, #5943be, #3468ff);
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 78%;
+        grid-gap: 40px;
+        margin: 0 auto;
+        .first, .second, .third {
+            @include d-flex(space-between, flex-start);
+            margin-top: 110px;
+            color: $white;
+            h1 {
+                @include fontStyle(Poppins, 17px, 800, $white);
+                color: $white;
+                margin-bottom: 20px;
+            }
+            p {
+                width: 285px;
+                @include fontStyle(Poppins, 13px, 400, $white)
+            }
+            .image {
+                margin-right: 30px;
+            }
+        }
+    }
+}
+
+footer {
+    height: 440px;
+    background-color: #30323d;
+    .top {
+        @include d-flex(space-between, null);
+        margin: 0 auto;
+        width: 78%;
+        color: $white;
+        padding-top: 80px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #979797;
+        margin-bottom: 50px;
+        p {
+            @include fontStyle(PlayFairDisplay, 35px, 600, $white);
+        }
+        div {
+            text-align: right;
+            h1 {
+                @include fontStyle(Poppins, 14px, 800, $white);
+                margin-bottom: 20px;
+            }
+            p {
+                @include fontStyle(Poppins, 13px, 500, $white);
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .bottom {
+        @include d-flex(space-between, center);
+        width: 78%;
+        margin: 0 auto;
+        p {
+            @include fontStyle(Poppins, 13px, 500, $white);
+        }
+        .images {
+            @include d-flex(space-between, center);
+            div {
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+.below-second-products {
+    position: relative;
+    width: 100%;
+    height: 642px;
+    .right-image {
+        position: absolute;
+        height: 642px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .left-texts {
+        position: absolute;
+        width: 400px;
+        left: 80px;
+        top: 120px;
+        p {
+            @include fontStyle(Poppins, 13px, 800, #455065);
+            margin-bottom: 20px;
+        }
+        h1 {
+            @include fontStyle(PlayFairDisplay, 30px, 600, #455065);
+            margin-bottom: 20px;
+        }
+        div {
+            margin-bottom: 30px;
+            h1 {
+                @include fontStyle(Poppins, 13px, 600, #455065);
+                margin-bottom: 15px;
+            }
+            p {
+                @include fontStyle(Poppins, 13px, 400, #455065);
+            }
+        }
+        a {
+            @include d-flex(null, center);
+            margin: 0;
+            text-decoration: none;
+            @include fontStyle(Poppins, 13px, 400, #3468ff);
+            div {
+                width: 20px; 
+                height: 14px;
+                margin-bottom: 0;
+                margin-left: 8px;
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    fill: #3468ff;
+                }
+            }
+        }
+    }
+}

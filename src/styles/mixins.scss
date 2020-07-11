@@ -1,0 +1,33 @@
+@mixin fontStyle($fontfam, $font, $fontWeight, $color) {
+    font-family: $fontfam;
+    font-size: $font;
+    font-weight: $fontWeight;
+    color: $color;
+}
+
+@mixin d-flex($jc, $ai) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin forInput($width, $padding, $height) {
+    width: $width;
+    height: $height;
+    border-radius: 3px;
+    border: solid 1px #d9e1e7;
+    box-sizing: border-box;
+    padding: $padding;
+    &::placeholder {
+        color: #aeb9c1;
+    }
+}
+
+@mixin linkHovered {
+    &:hover {
+        color: #78C482;
+        fill: #78C482;
+        cursor: pointer;
+        transition: .5s;
+    }
+}
